@@ -6,14 +6,31 @@
 <PageTitle>Dawnstar</PageTitle>
 <h3>Dawnstar</h3>
 
+<AuthorizeView>
+    <Authorized>
+        <span>You're not authorized, buddy.</span>
+        <NavLink href="authorization">
+            <button class="btn btn-primary form-control-append">Authorization</button>
+        </NavLink>
+    </Authorized>
+    <NotAuthorized>
+        <span>You're not authorized, buddy.</span>
+        <NavLink href="authorization">
+            <button class="btn btn-primary form-control-append">Authorization</button>
+        </NavLink>
+    </NotAuthorized>
+</AuthorizeView>
+
 @if(!IsConnected)
 {
+    <AuthorizeView>
     <div class="input-group">
         <input @bind="username" @onkeyup="HandleInputConnect" class="form-control" placeholder="What's your name?">
         <button class="btn btn-primary form-control-append" @onclick="Connect">
             Connect
         </button>
     </div>
+    </AuthorizeView>
 }
 else
 {

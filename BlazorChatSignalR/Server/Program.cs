@@ -1,5 +1,7 @@
 using BlazorChatSignalR.Server.Hubs;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
